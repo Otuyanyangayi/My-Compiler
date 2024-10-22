@@ -168,7 +168,7 @@ class Lexer
   end
   
   # Example usage
-  input = "tern(5e2, 2.7, 1)"  # Testing input with a ternary operation
+  input = "tern(1, tern(0, 2, 3), 4)"  # Testing input with a ternary operation
   compiler = Compiler.new(input)
   puts compiler.compile  # Outputs: "(5e2 ? 2.7 : 1)"
   
