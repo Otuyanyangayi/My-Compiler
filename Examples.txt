@@ -1,0 +1,101 @@
+Test Cases
+
+1. Basic Addition
+Input: add(2, 3)
+Expected Output: 2 + 3
+Description: Test simple addition of two numbers.
+
+2. Basic Subtraction
+Input: sub(7, 4)
+Expected Output: 7 - 4
+Description: Test simple subtraction of two numbers.
+
+3. Basic Multiplication
+Input: mul(3, 5)
+Expected Output: 3 * 5
+Description: Test simple multiplication of two numbers.
+
+4. Basic Division
+Input: div(10, 2)
+Expected Output: 10 / 2
+Description: Test simple division of two numbers.
+
+5. Basic Modulo
+Input: mod(10, 3)
+Expected Output: 10 % 3
+Description: Test modulo operation.
+
+6. Basic Power
+Input: pow(2, 3)
+Expected Output: 2 ^ 3
+Description: Test power operation.
+
+7. Basic Ternary Operator
+Input: tern(1, 2, 3)
+Expected Output: 1 ? 2 : 3
+Description: Test ternary operation.
+
+8. Multiple Operations with Correct Precedence
+Input: add(1, mul(2, 3))
+Expected Output: 1 + 2 * 3
+Description: Ensure that multiplication takes precedence over addition.
+
+9. Power Precedence
+Input: add(2, pow(2, 3))
+Expected Output: 2 + 2 ^ 3
+Description: Ensure that power operation takes precedence over addition.
+
+10. Right-Associativity of Power Operator
+Input: pow(2, pow(3, 2))
+Expected Output: 2 ^ (3 ^ 2)
+Description: Ensure that the power operator is right-associative.
+
+11. Right-Associativity of Ternary Operator
+Input: tern(1, tern(0, 2, 3), 4)
+Expected Output: 1 ? (0 ? 2 : 3) : 4
+Description: Ensure that the ternary operator is right-associative.
+
+12. Multiple Operations with Parentheses
+Input: add(mul(2, 3), sub(5, 1))
+Expected Output: 2 * 3 + (5 - 1)
+Description: Test multiple operations with parentheses, ensuring correct order of evaluation.
+
+13. Handling Negative Numbers
+Input: sub(5, -3)
+Expected Output: 5 - (-3)
+Description: Ensure that the parser can handle negative numbers properly.
+
+14. Complex Expression with All Operators
+Input: add(5, mul(3, sub(10, pow(6, 4))))
+Expected Output: 5 + 3 * (10 - 6 ^ 4)
+Description: Test a complex expression with all supported operations, ensuring correct precedence and associativity.
+
+15. Handling Whitespace in Input
+Input: add ( 5 , mul( 3 , sub(10 , pow( 6 , 4 ) ) ) )
+Expected Output: 5 + 3 * (10 - 6 ^ 4)
+Description: Ensure that whitespace between tokens does not affect the parsing.
+
+16. Unnecessary Parentheses Omission
+Input: mul(add(2, 3), sub(8, 4))
+Expected Output: (2 + 3) * (8 - 4)
+Description: Ensure that parentheses are included only where necessary for grouping operations with lower precedence.
+
+17. Empty Input
+Input: ``
+Expected Output: Error (e.g., "Empty input")
+Description: Test handling of empty input, should raise an error.
+
+18. Unknown Function
+Input: foo(5, 3)
+Expected Output: Error (e.g., "Unknown token: foo")
+Description: Test for unknown function name, should raise an error.
+
+19. Unbalanced Parentheses
+Input: add(5, mul(3, sub(10, pow(6, 4))
+Expected Output: Error (e.g., "Expected RPAREN")
+Description: Test for unbalanced parentheses, should raise an error.
+
+20. Missing Comma Between Arguments
+Input: add(5 mul(3, sub(10, pow(6, 4))))
+Expected Output: Error (e.g., "Expected COMMA, got MUL")
+Description: Test for missing comma between arguments, should raise an error.
